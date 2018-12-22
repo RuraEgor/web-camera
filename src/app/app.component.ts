@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import construct = Reflect.construct;
+// import * as $ from 'jquery';
+// import 'jquery-ui';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +16,10 @@ export class AppComponent implements OnInit {
   construct() {}
   
   ngOnInit() {
+  
+    $("#datepicker").datepicker();
+  
+    $('body').addClass('kkk77777777777777777777777777777777777');
   
     this.img1 = document.getElementById('img1');
     this.input = <HTMLElement>document.querySelector('.count-color');
