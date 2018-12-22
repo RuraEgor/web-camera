@@ -9,19 +9,22 @@ import construct = Reflect.construct;
 export class AppComponent implements OnInit {
   
   img1: any;
+  input: any;
   
   construct() {}
   
   ngOnInit() {
   
     this.img1 = document.getElementById('img1');
+    this.input = <HTMLElement>document.querySelector('.count-color');
     
     this.videoTransp();
   }
   
   videoTransp() {
     let canv1 = <HTMLCanvasElement>document.getElementById('canv1');
-  
+    let countColor = this.input.value;
+    
     canv1.width = 700;
     canv1.height = 500;
     
@@ -32,10 +35,9 @@ export class AppComponent implements OnInit {
     let imgData = ctvCanv.getImageData(0, 0, ctvCanv.canvas.width, ctvCanv.canvas.height);
     let pixels = imgData.data;
     
-    let znProv = 200;
     
     for (let i = 0; i < pixels.length; i += 4) {
-      if (pixels[i] > znProv && pixels[i + 1] > znProv && pixels[i + 2] > znProv) pixels[i + 3] = 0;
+      if (pixels[i] > countColor && pixels[i + 1] > countColor && pixels[i + 2] > countColor) pixels[i + 3] = 0;
     }
     
     ctvCanv.putImageData(imgData, 0, 0);
