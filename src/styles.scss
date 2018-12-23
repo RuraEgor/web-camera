@@ -6,6 +6,7 @@ body {
   background-position: center center;
   background-size: cover;
   min-height: 100vh;
+  //overflow: hidden;
 }
 
 #selfy {
@@ -23,4 +24,18 @@ body {
   display: block;
   width: 200px;
   margin: 200px auto 30px;
+}
+
+.hide-img {
+  opacity: 0;
+  position: absolute;
+  z-index: -10;
+  pointer-events: none;
+}
+
+#resizable {
+  min-width: 100px;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 100px;
 }
