@@ -1,13 +1,22 @@
 <webcam id="selfy"></webcam>
-<input type="number" class="count-color js-count-color" value="190" min="0" max="256">
 <canvas id="canv1" class="canvas" width="400" height="300"></canvas>
-<div id="slider"></div>
+<ng5-slider [(value)]="value" [options]="options"></ng5-slider>
+
+<button (click)="takeFoto()">Foto</button>
+<button (click)="perst1()">Убрать персонажа</button>
+<button (click)="perst2()">Убрать персонажа</button>
+<button (click)="takeFoto()">Foto</button>
+<button (click)="makeTrans()">Selfy на прозрачном фоне</button>
+
+<img src="" id="foto-ready" alt="">
+
 <div class="hide-img">
   <img src="/assets/img/fon.png" alt="" class="fon">
   <img src="/assets/img/pers-2.png" alt="" class="pers-2">
   <img src="/assets/img/pers-3.png" alt="" class="pers-3">
+  <canvas id="canv2" class="canvas canvas_2"></canvas>
 </div>
 
-<div id="drag">
-  <img src="/assets/img/pers-3.png" alt="" id="resizable">
-</div>
+<!--<div id="drag">-->
+  <!--<img src="/assets/img/pers-3.png" alt="" id="resizable">-->
+<!--</div>-->
