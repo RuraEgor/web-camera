@@ -7,7 +7,11 @@ body {
   background-position: center center;
   background-size: cover;
   min-height: 100vh;
-  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
 }
 
 #selfy {
@@ -16,9 +20,45 @@ body {
   z-index: -10;
 }
 
+#foto-ready {
+  margin-top: 20px;
+}
+
+.cont {
+  max-width: 700px;
+  margin: 100px auto 0;
+}
+
+.wrap-btn {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.btn {
+  padding: 4px 5px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 12px;
+  text-align: center;
+  color: gray;
+  transition: 0.4s;
+  background: #f3f2f2;
+  cursor: pointer;
+}
+
+.btn.active {
+  background: #dedcdc;
+}
+
+.wrap-slider {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .canvas {
   display: block;
-  margin: 0 auto 0;
 }
 
 .hide-img {
@@ -35,3 +75,4 @@ body {
   height: auto !important;
   min-height: 100px;
 }
+

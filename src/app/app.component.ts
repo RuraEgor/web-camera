@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
   persCom_1: boolean = true;
   persCom_2: boolean = true;
   
-  value: number = 190;
+  value: number = 120;
   options: Options = {
     floor: 0,
     ceil: 256
@@ -99,7 +99,6 @@ export class AppComponent implements OnInit {
   
   takeFoto() {
     let canv1 = <HTMLCanvasElement>document.getElementById('canv1');
-    let ctvCanv = canv1.getContext('2d');
     let fotoReady = <HTMLImageElement>document.querySelector('#foto-ready');
     fotoReady.src = canv1.toDataURL("image/png");
   }

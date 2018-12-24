@@ -1,14 +1,20 @@
 <webcam id="selfy"></webcam>
-<canvas id="canv1" class="canvas" width="400" height="300"></canvas>
-<ng5-slider [(value)]="value" [options]="options"></ng5-slider>
 
-<button (click)="takeFoto()">Foto</button>
-<button (click)="perst1()">Убрать персонажа</button>
-<button (click)="perst2()">Убрать персонажа</button>
-<button (click)="takeFoto()">Foto</button>
-<button (click)="makeTrans()">Selfy на прозрачном фоне</button>
-
-<img src="" id="foto-ready" alt="">
+<div class="cont">
+  <canvas id="canv1" class="canvas" width="400" height="300"></canvas>
+  <div class="wrap-btn">
+    <button class="btn" [class.active]="persCom_1" (click)="perst1()">Персонаж 1</button>
+    <button class="btn" [class.active]="makeTransBack" (click)="makeTrans()">Прозрачный фон</button>
+    <button class="btn" [class.active]="" (click)="takeFoto()">Сделать фото</button>
+    <button class="btn" [class.active]="persCom_2" (click)="perst2()">Персонаж 2</button>
+  </div>
+  <!---->
+  <div class="wrap-slider" *ngIf="makeTransBack">
+    <ng5-slider [(value)]="value" [options]="options"></ng5-slider>
+  </div>
+  <!---->
+  <img src="" [class.foto-ready]="" id="foto-ready" alt="">
+</div>
 
 <div class="hide-img">
   <img src="/assets/img/fon.png" alt="" class="fon">
